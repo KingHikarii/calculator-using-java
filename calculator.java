@@ -4,16 +4,21 @@ import java.lang.Math;
 public class calculator {
 	public static void main(String args[]){
 
+while(true) {
+		System.out.println();
 		System.out.println("Select an operation: ");
 		System.out.println("1. Addition (+) ");
 		System.out.println("2. Subtraction (-) ");
 		System.out.println("3. Multiplication (*) ");
 		System.out.println("4. Division (/) ");
 		System.out.println("5. Square Root (*) ");
-		System.out.println("6. Squaring (^2) ");
+		System.out.println("6. Exponential (^n) ");
+		System.out.println("To Exit Press 0");
 
 		Scanner userInput = new Scanner(System.in);
 		int receivedInput = userInput.nextInt();
+
+	
 
 		if (receivedInput == 1){
 			System.out.println("Addition selected!");
@@ -21,6 +26,7 @@ public class calculator {
 			int digitA = userInput.nextInt();
 			System.out.println("Enter another number");
 			int digitB = userInput.nextInt();
+			System.out.println();
 			addition(digitA, digitB);
 		}
 		else if(receivedInput == 2)
@@ -29,7 +35,8 @@ public class calculator {
 			System.out.println("Enter a number: ");
 			int digitA = userInput.nextInt();
 			System.out.println("Enter another number");
-			int digitB = userInput.nextInt();			
+			int digitB = userInput.nextInt();
+			System.out.println();			
 			subtraction(digitA, digitB);
 		}
 		else if(receivedInput == 3)
@@ -38,33 +45,43 @@ public class calculator {
 			System.out.println("Enter a number: ");
 			int digitA = userInput.nextInt();
 			System.out.println("Enter another number");
-			int digitB = userInput.nextInt();			
+			int digitB = userInput.nextInt();
+			System.out.println();			
 			multiplication(digitA, digitB);
 		}
 		else if(receivedInput == 4)
 		{
 			System.out.println("Division selected!");
 			System.out.println("Enter a number: ");
-			int digitA = userInput.nextInt();
+			double digitA = userInput.nextInt();
 			System.out.println("Enter another number");
-			int digitB = userInput.nextInt();			
+			double digitB = userInput.nextInt();
+			System.out.println();			
 			division(digitA, digitB);
+			
 		}
 		else if(receivedInput == 5)
 		{
 			System.out.println("Square root selected!");
 			System.out.println("Enter a number: ");
 			int digitA = userInput.nextInt();
+			System.out.println();
 			squareroot(digitA);
 		}
 		else if(receivedInput == 6)
 		{
-			System.out.println("Squaring selected!");
+			System.out.println("Exponent selected!");
 			System.out.println("Enter a number: ");
 			int digitA = userInput.nextInt();	
 			System.out.println("Enter another number");
-			int digitB = userInput.nextInt();				
-			squaring(digitA, digitB);
+			int digitB = userInput.nextInt();
+			System.out.println();				
+			exponent(digitA, digitB);
+			}
+		else if(receivedInput == 0)
+		{
+			break;
+		}
 		}
 }
 		//Creating the methods for the operations here.
@@ -88,22 +105,22 @@ public class calculator {
 		System.out.println(a + "x" + b + "=" + c);
 		return c;
 		}
-		public static int division(int a, int b)
+		public static double division(double a, double b)
 		{
-		int c = a / b;
-		System.out.println(a + "÷" + b + "=" + c);
+		double c = a / b;
+		System.out.println(a + "/" + b + "=" + c);
 		return c;
 		}
-		public static int squareroot(int a)
+		public static double squareroot(int a)
 		{
-		float c = Math.sqrt(a);
-		System.out.println("The square root of " + a + "is");
+		double c = Math.sqrt(a);
+		System.out.println("The square root of " + a + " is " + c);
 		return c;
 		}
-		public static int squaring(int a, int b)
+		public static double exponent(int a, int b)
 		{
-		float c = Math.pow(a, b);
-		System.out.println(a + "to the power of" + b + "is");
+		double c = Math.pow(a, b);
+		System.out.println(a + " to the power of " + b + " is " + c);
 		return c;
 		}
 
